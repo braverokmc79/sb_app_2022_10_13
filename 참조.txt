@@ -6,5 +6,5 @@ https://github.com/SangWon7242/sb_app_test_2022_10_14/blob/master/src/main/resou
 
 create database sb_app_2022_t CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
-create user `sbapp2022t`@`localhost` identified by 'sbapp2022t!123';
-grant all privileges on sb_app_2022_t.* to `sbapp2022t`@`localhost` ;
+create user `sbapp2022t`@`%` identified by 'sbapp2022t!123';
+grant all privileges on sb_app_2022_t.* to `sbapp2022t`@`%` ;
