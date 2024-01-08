@@ -1,24 +1,30 @@
 package com.sbs.exam.sb_app_2022_10_13.article.repository;
 
+
 import com.sbs.exam.sb_app_2022_10_13.article.vo.Article;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-@Repository
-public class ArticleRepository {
+@Mapper
+public interface ArticleRepository {
 
 
-  public List<Article> makeTestData(int articleListId, List<Article> articleList) {
-    for(int i=1; i<10; i++){
-      articleListId =i;
-      String title=" 제목"+i;
-      String content="내용"+i;
-      Article article=new Article(articleListId, title,content);
-      articleList.add(article);
-    }
-    return  articleList;
-  }
+  public Article writeArticle(Article article);
+
+
+  @Select("select * from article where id = #{id}")
+  public Article getArticle(int id);
+
+   public void deleteArticle(int id);
+
+
+   public List<Article> getArticles();
+
+
+  public void modifyArticle(Article article);
+
 
 
 }

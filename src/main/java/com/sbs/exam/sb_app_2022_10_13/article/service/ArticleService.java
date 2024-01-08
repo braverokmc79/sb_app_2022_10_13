@@ -15,8 +15,12 @@ public class ArticleService {
 
 
     public List<Article> makeTestData(int articleListId, List<Article> articleList){
-      return   articleRepository.makeTestData(articleListId, articleList);
+      return   null;
     }
 
+
+  public Article getAritcle(int id) {
+    return  articleRepository.getArticle(id);
+  }
 
 }
